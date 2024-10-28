@@ -29,12 +29,12 @@ namespace LiarsBarEnhance.Components
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Insert))
+            if (Input.GetKeyDown(KeyCode.F1))
             {
                 _isControllable = !_isControllable; 
             }
 
-            if (Input.GetKeyDown(KeyCode.Delete))
+            if (Input.GetKeyDown(KeyCode.F2))
             {
                 _showControlStatus = !_showControlStatus; 
                 _showKeyHints = !_showKeyHints; 
@@ -44,12 +44,12 @@ namespace LiarsBarEnhance.Components
             if (!_charController.isOwned || !_isControllable)
                 return;
 
-            if (Input.GetKeyDown(KeyCode.Home)) 
+            if (Input.GetKeyDown(KeyCode.F3)) 
             {
                 _charController.HeadPivot.transform.localPosition = _initHeadPosition;
             }
 
-            if (Input.GetKeyDown(KeyCode.End))
+            if (Input.GetKeyDown(KeyCode.F4))
             {
                 _charController.transform.localPosition = _initBodyPosition;
                 _charController.transform.localRotation = _initBodyRotation;
@@ -117,7 +117,7 @@ namespace LiarsBarEnhance.Components
                 };
 
                 GUI.Label(new Rect(Screen.width - 200, 60, 200, 50),
-                          "按Insert开关移动锁定\n按Delete开关按键提示\n按Home恢复头部\n按End恢复身体\n按I疯狂转头\n按住O张嘴\n↑↓←→头的移动\nWASD身体移动\n按住鼠标右键转动身体\n按住中键拖动头前后移动\n按左Shift上升丨左Ctrl下降", hintStyle);
+                          "按 F1 开关移动锁定\n按 F2 开关按键提示\n按 F3 恢复头部\n按 F4 恢复身体\n按I疯狂转头\n按住O张嘴\n↑↓←→头的移动\nWASD身体移动\n按住鼠标右键转动身体\n按住中键拖动头前后移动\n按左Shift上升丨左Ctrl下降", hintStyle);
             }
         }
     }
